@@ -4,14 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.cafeemcasa.screens.LoginScreen
+import com.example.cafeemcasa.router.AppRouter
+import com.example.cafeemcasa.screens.MenuScreen
 import com.example.cafeemcasa.ui.theme.CafeEmCasaTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CafeEmCasaTheme {
-                LoginScreen()
+                AppRouter()
             }
         }
     }
@@ -31,6 +27,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     CafeEmCasaTheme {
-        LoginScreen()
+        MenuScreen()
     }
 }

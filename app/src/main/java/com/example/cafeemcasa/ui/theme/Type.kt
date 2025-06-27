@@ -38,6 +38,11 @@ val Typography = Typography(
         lineHeight = 21.sp,
         letterSpacing = 0.sp
     ),
+    displayMedium = TextStyle(
+        fontFamily = PlusJakartaSans,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 21.sp,),
     bodyLarge = TextStyle(
         fontFamily = PlusJakartaSans,
         fontWeight = FontWeight.Medium,
