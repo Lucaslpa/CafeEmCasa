@@ -36,7 +36,7 @@ fun MainAppScreen() {
                 OrderStatusScreen()
             }
             composable("profile") {
-                // ProfileScreen()
+                 ProfileScreen()
             }
         }
     }
