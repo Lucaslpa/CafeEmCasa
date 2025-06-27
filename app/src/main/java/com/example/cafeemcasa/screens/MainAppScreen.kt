@@ -32,6 +32,9 @@ fun MainAppScreen() {
             composable("menu") {
                 MenuScreen()
             }
+            composable("orders") {
+                OrderStatusScreen()
+            }
             composable("profile") {
                 // ProfileScreen()
             }

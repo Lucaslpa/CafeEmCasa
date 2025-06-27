@@ -27,6 +27,7 @@ private val LightColorScheme = lightColorScheme(
     tertiary = LightBrown,
     onBackground = Black,
     background = White
+
 )
 
 @Composable
