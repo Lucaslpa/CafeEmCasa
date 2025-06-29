@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.cafeemcasa.screens.LoginScreen
 import com.example.cafeemcasa.screens.MainAppScreen
+import com.example.cafeemcasa.screens.ProductScreen
 
 
 @Preview
@@ -24,7 +25,16 @@ fun AppRouter() {
         }
 
         composable("main") {
-            MainAppScreen()
+            MainAppScreen(mainNavController = appNavController)
+        }
+
+        composable("product/{productId}") { backStackEntry ->
+            val productId = backStackEntry.arguments?.getString("productId")
+            ProductScreen(productId = productId ?: "", onBackToMenu = {
+                appNavController.navigate("main") {
+                    popUpTo("main") { inclusive = true }
+                }
+            })
         }
     }
 }

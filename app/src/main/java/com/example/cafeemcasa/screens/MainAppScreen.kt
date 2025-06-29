@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -12,7 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.cafeemcasa.components.AppWrapper
 
 @Composable
-fun MainAppScreen() {
+fun MainAppScreen(mainNavController: NavHostController) {
     val contentNavController = rememberNavController()
     var currentTitle by remember { mutableStateOf("") }
     val navBackStackEntry by contentNavController.currentBackStackEntryAsState()
@@ -30,7 +31,11 @@ fun MainAppScreen() {
             startDestination = "menu",
         ) {
             composable("menu") {
-                MenuScreen()
+                MenuScreen(
+                    onSelectProduct = { product ->
+                        mainNavController.navigate("product/${product.id}")
+                    },
+                )
             }
             composable("orders") {
                 OrderStatusScreen()
